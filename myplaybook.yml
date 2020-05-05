@@ -1,0 +1,8 @@
+---
+- hosts: node1
+  become: yes
+  become_method: sudo
+
+  roles:
+  - ansible-role-jenkins-master
+
