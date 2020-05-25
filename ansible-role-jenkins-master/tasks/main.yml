@@ -66,24 +66,16 @@
 # Update Jenkins and install configured plugins.
 - include_tasks: plugins.yml
 
-# This works for VAGRANT
 - copy:
-    src: /var/www/vagrant/myproject
-    dest: /home/vagrant
-    owner: vagrant
-    group: vagrant
-    mode: 0777
-
-- copy:
-    src: /var/www/vagrant/jenkins-cli.jar
+    src: ./jenkins-cli.jar
     dest: /home/vagrant
 
 - copy:
-    src: /var/www/vagrant/.ssh/
+    src: ./known_hosts/
     dest: /home/vagrant/.ssh
 
 - copy:
-    src: /var/www/vagrant/jenkins/
+    src: ./jenkins/
     dest: /var/lib/jenkins
 
 - name: Create job

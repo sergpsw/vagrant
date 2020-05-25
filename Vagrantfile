@@ -11,8 +11,13 @@ Vagrant.configure("2") do |config|
       vb2.memory = "2024"
     end
 
-    web2.vm.synced_folder "/var/www/vagrant", "/var/www/vagrant"
-    web2.vm.provision "ansible", playbook: "playbook-web2.yml"
+    web2.vm.synced_folder "./", "/var/www/vagrant", type: "rsync"
+
+    web2.vm.provision "shell", path: "script.sh"
+    
+    web2.vm.provision "ansible_local" do |ansible|
+      ansible.playbook = "playbook-nginx.yml"
+    end
   end
 
   config.vm.define "web1" do |web1|
@@ -26,8 +31,13 @@ Vagrant.configure("2") do |config|
       vb1.memory = "2024"
     end
 
-    web1.vm.synced_folder "/var/www/vagrant", "/var/www/vagrant"
-    web1.vm.provision "ansible", playbook: "playbook-web1.yml"
+    web1.vm.synced_folder "./", "/var/www/vagrant", type: "rsync"
+
+    web1.vm.provision "shell", path: "script.sh"
+    
+    web1.vm.provision "ansible_local" do |ansible|
+      ansible.playbook = "playbook-jenkins.yml"
+    end
   end
 
 end

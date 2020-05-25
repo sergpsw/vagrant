@@ -1,19 +1,17 @@
-
 1. Download and install VirtualBox. Download and install Vagrant. Download and install Ansible. 
  - https://www.virtualbox.org/wiki/Linux_Downloads
  - https://www.vagrantup.com/intro/getting-started
  - https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
 
-2. Clone repo "git@github.com:sergpsw/vagrant.git" to your machine in directory /var/www/
+2. Clone the repository "git@github.com:sergpsw/vagrant-jenkins.git" to your machine in any folder. Open a terminal in this folder.
 
-3. In file '/var/www/vagrant/ansible-role-jenkins-master/defaults/main.yml' change USERNAME (row 34) and PASSWORD (row 36). Save and close this file.
+3. In file './ansible-role-jenkins-master/defaults/main.yml' default variables are indicated. Change USERNAME and PASSWORD can in row 33 and row 34.
 
-4. Open the terminal in this folder (/var/www/vagrant) and enter commands:
-  - 'ansible-galaxy install geerlingguy.jenkins'
-  - 'vagrant up'
+4. Run the command 'vagrant up'. 
+   NOTE. You can also set USERNAME and PASSWORD by running the playbook with parameter:
+   - ansible-playbook playbook-jenkins.yml -e 'jenkins_admin_username=YOUR_USERNAME jenkins_admin_password=YOUR_PASSWORD'
+   The host must be installed ansible!
 
-5. Wait until the virtual machine starts up. Later:
+5. Wait until the virtual machine starts up. Next:
  - Enter 192.168.88.21:8080 in the address bar of the browser to open the Jenkins interface. 
  - Enter 192.168.88.22 in the address bar of the browser to open your HTML page.
-
-

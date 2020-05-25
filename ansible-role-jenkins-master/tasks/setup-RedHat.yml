@@ -1,9 +1,8 @@
 ---
-- name: Install Python and Java.
+- name: Install Java.
   package:
     name:
-      - python
-      - openjdk-8-jre
+      - java-1.8.0-openjdk
 
 - name: Ensure dependencies are installed.
   package:
