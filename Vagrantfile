@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "web1" do |web1|
-    web1.vm.box = "ubuntu/xenial64"
+    web1.vm.box = "ubuntu/bionic64"
     web1.vm.hostname = "webserver1"
     web1.vm.network "private_network", ip: "192.168.88.21"
    

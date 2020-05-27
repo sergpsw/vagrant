@@ -1,7 +1,6 @@
 1. Download and install VirtualBox. Download and install Vagrant. Download and install Ansible. 
  - https://www.virtualbox.org/wiki/Linux_Downloads
  - https://www.vagrantup.com/intro/getting-started
- - https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
 
 2. Clone the repository "git@github.com:sergpsw/vagrant-jenkins.git" to your machine in any folder. Open a terminal in this folder.
 
